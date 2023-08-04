@@ -15,6 +15,12 @@ pub struct Player {
 }
 
 
+#[derive(Component)]
+pub struct Score {
+    pub player1_score: i32,
+    pub player2_score: i32,
+}
+
 
 fn spawn_player(mut commands: Commands, 
     mut meshes: ResMut<Assets<Mesh>>,
@@ -32,7 +38,7 @@ fn spawn_player(mut commands: Commands,
             ..default()
         },
         Player {
-            id: 1
+            id: 1,
         }
     ));
 
@@ -47,7 +53,19 @@ fn spawn_player(mut commands: Commands,
             ..default()
         },
         Player {
-            id: 2
+            id: 2,
+        }
+    ));
+
+    commands.spawn((
+        Text2dBundle {
+            text: Text::from_section("", TextStyle { font_size: 20.0, color: Color::WHITE, ..default() }),
+            transform: Transform::from_translation(Vec3 { x: 0.0, y: 300.0, z: 0.0 }),
+            ..default()
+        },
+        Score {
+            player1_score: 0,
+            player2_score: 0
         }
     ));
 
