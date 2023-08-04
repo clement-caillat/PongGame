@@ -46,7 +46,6 @@ fn ball_movement(
 ) {
 
     let win = window.get_single().unwrap();
-    // println!("Width : {}\nHeigth : {}", win.width(), win.height());
 
     for (mut text , mut score)in &mut score {
         for (mut transform, mut _ball) in &mut ball {
@@ -79,7 +78,6 @@ fn ball_movement(
 fn ball_player_collision(
     mut ball: Query<(&Transform, &mut Ball)>,
     player: Query<(&Transform, &Player)>,
-    // mut query: Query<&mut Text>,
 ) {
 
 
@@ -101,10 +99,6 @@ fn ball_player_collision(
                     _ball.velocity.x = -_ball.velocity.x;
                 }
             }
-
-            // for mut text in &mut query {
-            //     text.sections[1].value = format!("{:+08.3}", ball_pos.x);
-            // }
         }
     }
 }

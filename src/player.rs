@@ -107,7 +107,6 @@ fn move_player_2(
     let win = window.get_single().unwrap();
 
     for (mut transform, raket) in &mut raket {
-        // Assuming you have a unique identifier for player 2, like player_id = 2
         if raket.id == 2 {
             if input.pressed(KeyCode::O) {
                 if transform.translation.y + 75.0 <= win.height() / 2.0 {

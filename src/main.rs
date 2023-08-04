@@ -1,6 +1,6 @@
+#![windows_subsystem = "windows"]
 use ball::BallPlugin;
 use bevy::prelude::*;
-// use bevy::render::camera::ScalingMode;
 use bevy::core_pipeline::clear_color::ClearColorConfig;
 use player::PlayerPlugin;
 
@@ -37,39 +37,5 @@ fn setup(mut commands: Commands) {
         ..Default::default()
     };
 
-    // commands.spawn(
-    //     Text2dBundle {
-    //         text: Text::from_sections([
-    //             TextSection::new(
-    //                 "Ball x : ",
-    //                 TextStyle {
-    //                     font_size: 20.0,
-    //                     color: Color::WHITE,
-    //                     ..default()
-    //                 },
-                    
-    //             ),
-    //         TextSection::new(
-    //             "",
-    //             TextStyle {
-    //                 font_size: 20.0,
-    //                 color: Color::WHITE,
-    //                 ..default()
-    //             },
-    //         ),
-    //         ]),
-    //         transform: Transform::from_translation(Vec3 { x: -300.0, y: 300.0, z: 0.0 }),
-    //         ..default()
-    //     }
-    // );
-
     commands.spawn(camera);
 }
-
-
-
-// fn show_score(mut commands: Commands) {
-//     commands.spawn(
-
-//     )
-// }
